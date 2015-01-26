@@ -1,0 +1,9 @@
+<div class="contextual template"><%= link_to l(:list_notes_templates), :action => "index" , :controller => "issue_templates_notes"%></div>
+<h1><div><%= l(:txt_issue_template_note_add)%></div></h1>
+<%= render :partial => 'form' %></div>
+<br/>
+
+<%= preview_link({:controller => 'issue_templates_notes', :action => 'preview', :issue_templates_notes_id => @issue_templates_note}, 'issue_templates_note_description', target='preview' ) %>
+<div id="preview" class="wiki"></div>
+ 
+</div>

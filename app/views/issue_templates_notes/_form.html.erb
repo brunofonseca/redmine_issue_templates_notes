@@ -1,0 +1,41 @@
+<%= form_for @issue_templates_note, :html => {:multipart => true, :id => 'notes-form'} do |f| %>
+<% if @issue_templates_note.errors.any? %>
+<div id="errorExplanation">
+	<ul>
+		<% @issue_templates_note.errors.each do |msg| %>
+		<li>
+			<%= l(:msg_confirm_fields) %> &nbsp;<%= l(msg) %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<div class="box">
+	<table>
+		<tr>
+			<%= f.hidden_field :author_id, :value => User.current.id %>
+		</tr>
+		<tr>
+			<td><b><%= f.label l(:lbl_template_name) %></b> * :</td>
+			<td><%= f.text_field :template_name, :size => 80 %> </td>
+		</tr>
+		<tr>
+			<td><b><%= f.label l(:lbl_tracker_id) %></b> : <b/></td>
+			<td><%= f.collection_select :tracker_id, Tracker.all, :id, :name, :prompt => 'Selecione' %></td>
+		</tr>
+		<tr>
+			<td><b><%= f.label l(:lbl_description) %></b> * :<b/></td>
+			<td><%= f.text_area :description,:class => "wiki-edit" %> </td>
+		</tr>
+		<%= wikitoolbar_for "settings_issue_templates_note_description" %>
+		<tr>
+			<td><b><%= f.label l(:lbl_enabled) %></b> : <%= f.check_box :enabled %><b/></td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+<div class="actions">
+	<%= f.submit l(:txt_save_template)  %>
+	<%= link_to l(:button_cancel), {:action => 'index'}, :data => {:confirm => l(:text_are_you_sure)} %>
+	<% end %>
+	</br>

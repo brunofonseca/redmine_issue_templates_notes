@@ -1,0 +1,28 @@
+<!-- Esconde o botao de Aplicar --> 
+<script type="text/javascript">
+	$(function(){
+		hidden_button();
+	});
+	function hidden_button() {
+     $("#settings").find("input[type=submit]").css("display", "none");
+	}
+</script>
+<!-- fim -->
+<table>
+	<tr>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<td>
+		<div class="template">
+			<%= link_to  l(:list_notes_templates), :action => "index" , :controller => "issue_templates_notes" %> |
+		</div></td>
+		<td>
+		<div class="icon icon-add">
+			<%= link_to l(:add_note_templates), :action => "new" , :controller => "issue_templates_notes" %>
+		</div>
+		</td>
+	</tr>
+</table>

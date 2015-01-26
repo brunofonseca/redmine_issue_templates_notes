@@ -1,0 +1,10 @@
+.containerTemplate {
+    padding-top: -90%;
+} 
+
+.fieldset_templates{
+	margin-top: 2px;
+}
+#admin-menu a.redmine-issue-templates-notes { 
+   background-image: url(../images/redmine_notes.png); 
+}

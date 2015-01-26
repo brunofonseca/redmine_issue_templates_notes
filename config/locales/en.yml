@@ -1,0 +1,38 @@
+# English strings go here for Rails i18n
+en:
+  notes : Notes
+  issue_templates_notes: Issue Templates Notes
+  notes_templates: Notes
+  list_notes_templates:  List templates notes
+  add_note_templates: Add Template Note
+  txt_save_template : Save Template
+  txt_back : Back
+  txt_issue_template_note_add : Issue templates notes / Add
+  txt_issue_templates_notes_list : Issue template notes
+  txt_select_a_template: Select a template  
+  lbl_tracker : Tracker
+  lbl_template_name: Template name
+  lbl_tracker_id : Type
+  lbl_project_id : Project
+  lbl_author : Author
+  lbl_description : Description    
+  lbl_enabled : Enabled
+  lbl_ordenation : Ordenation
+  lbl_options : Options
+  lbl_created_on : Criated on 
+  lbl_updated_on : Updated on
+  lbl_edit_template_note: Edit
+  lbl_delete_template_note: Delete
+  lbl_author: Author
+  lbl_tracker_type: Tracker type
+  msg_confirm_deletion: Do you really wish delete this Template note?  
+  msg_confirm_fields : "Fill out the field "
+  msg_notice_sucess_create:  "Note created sucessfull"
+  msg_notice_sucess_updated:  "Note edited sucessfull"
+  msg_notice_sucess_deleted: "Note deleted sucessfull"
+  msg_error: "A error ocurred in operation of exclusion."
+  template_name: "Name Template"
+  tracker : "Type"
+  lbl_select_a_template: Select a template note
+  template_notes: "Template Notes"
+  description: "Description"

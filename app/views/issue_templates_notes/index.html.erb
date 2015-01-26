@@ -1,0 +1,35 @@
+<h1>
+<%= l(:txt_issue_templates_notes_list)%>
+</h1>
+
+<div class="contextual icon icon-add">
+	<%= link_to l(:txt_new_template_note), new_issue_templates_note_path %>
+</div>
+<br/>
+<br/>
+<table class="list groups">
+	<tr>
+		<th> <%= l(:lbl_tracker_type)  %> </th>
+		<th> <%= l(:lbl_template_name) %> </th>
+		<th> <%= l(:lbl_author)        %> </th>
+		<th> <%= l(:lbl_created_on)    %> </th>
+		<th> <%= l(:lbl_updated_on)    %> </th>
+		<th> <%= l(:lbl_enabled)       %> </th>
+		<th> <%= l(:lbl_ordenation)    %> </th>
+	</tr>
+	<% @issue_templates_notes.order(:template_name).each do |template_note| %>
+	<tr class="box tabular">
+		<td><%= (template_note.tracker) %></td>
+		<td><%= link_to template_note.template_name, controller: "issue_templates_notes", action: "edit", id: template_note %></td>
+		<td><%= template_note.author %></td>
+		<td><%= template_note.created_on.to_date %></td>
+		<td><%= template_note.updated_on.to_date %></td>
+		<td><%= checked_image template_note.enabled? %></td>
+		<td> <%= link_to l(:lbl_edit_template_note), controller: "issue_templates_notes", action: "edit", id: template_note %> |
+		<%= link_to l(:lbl_delete_template_note), template_note, method: :delete, data: { confirm: l(:msg_confirm_deletion) } %> </td>
+	</tr>
+	<% end %>
+</table>
+<br/>
+
+<%= link_to l(:back), :controller => "issue_templates_notes_settings", :action => "back_partial_init" %>

@@ -1,0 +1,2 @@
+module IssueTemplatesNotesSettingsHelper
+end

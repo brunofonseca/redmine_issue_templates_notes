@@ -1,0 +1,3 @@
+= redmine_issue_templates_notes
+-> Pre-view na página de new
+-> Listagem por filtro de Ordenação Alfabética e por tracker

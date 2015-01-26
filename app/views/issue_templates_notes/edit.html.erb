@@ -1,0 +1,15 @@
+<h1><%= link_to l(:issue_templates_notes), :controller => "issue_templates_notes", :action => "index"%> &#187; <%= (@issue_templates_note.template_name) %></h1>
+
+<div class="template" style="float: right">
+	<%= link_to l(:list_notes_templates), :action => "index" , :controller => "issue_templates_notes"%> &nbsp;|
+	<%= link_to l(:txt_new_template_note), new_issue_templates_note_path , :class => 'icon icon-add'%>
+
+</div>
+<br/>
+<br/>
+<%= render 'form' %>
+<br/>
+
+<%= preview_link url_for(:controller => 'issue_templates_notes', :action => 'preview',:id => @issue_templates_note),'issue_templates_note_description', target='preview' %>
+<div id="preview" class="wiki"></div>
+</div>
