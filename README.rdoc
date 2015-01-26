@@ -1,3 +1,33 @@
 = redmine_issue_templates_notes
--> Pre-view na página de new
--> Listagem por filtro de Ordenação Alfabética e por tracker
+
+Redmine Issue Templates Notes Plugin and a plugin for creating and managing notes on tasks. Very useful when creating notes is extensive and problematic due to the size of the text files of the same.
+
+== Install
+
+1. Paste the folder “redmine_issue_templates_notes” into the plugins folder
+
+2. Run 'rake redmine:plugins:migrate  rails_ENV={your_environiment}'
+
+3. Restart Redmine app
+
+3. Go to Administration -> Extensions -> Configure(Redmine Issue Templates Notes) or in Administration Menu 'Templates Notes Icon'
+
+4. Create or edit your templates notes
+
+== Uninstall
+
+1. Run 'rake redmine:plugins:migrate NAME= redmine_issue_templates_notes VERSION=0 rails_ENV={your_environiment}'
+
+3. Delete plugin folder
+
+3. Restart redmine
+
+== Versions
+
+Works on version 2.3.x , 2.5.x and 2.6.x of Redmine
+
+== Feature Changelog
+
+=== 1.0.0 
+
+First Commit
