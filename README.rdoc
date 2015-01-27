@@ -1,5 +1,4 @@
-= redmine_issue_templates_notes
-
+= Redmine Issue Templates Notes
 Redmine Issue Templates Notes Plugin and a plugin for creating and managing notes on tasks. Very useful when creating notes is extensive and problematic due to the size of the text files of the same.
 
 == Install
