@@ -1,2 +1,3 @@
 source 'https://rubygems.org'
-gem "jquery-rails", "~> 2.0.2"
+
+#gem "jquery-rails", "~> 2.0.2"

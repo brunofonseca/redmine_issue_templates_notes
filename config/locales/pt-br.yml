@@ -3,9 +3,9 @@ pt-br:
   notes : Notas
   issue_templates_notes: Templates de Notas
   notes_templates: Notas
-  list_notes_templates:  Listar Templates de Notas
-  add_note_templates: Adicionar Template de Notas
-  txt_save_template : Salvar Template
+  list_notes_templates:  Listar templates
+  add_note_templates: Adicionar novo template
+  txt_save_template : Salvar
   txt_back : Voltar
   txt_issue_template_note_add : Issue Templates Notes / Novo
   txt_select_a_template: Selecione um Template de Notas
@@ -37,3 +37,4 @@ pt-br:
   lbl_select_a_template: Selecione um Template de Notas
   template_notes: "Template de Notas"
   description: Descricao
+  back: Voltar
