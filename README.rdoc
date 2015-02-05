@@ -31,6 +31,13 @@ Works on version 2.3.x , 2.5.x and 2.6.x of Redmine
 
 === 1.0.1 - Incremented a new layou for presentation plugin in view and actualized jQuery attributes.
 
-==  1.0.2 - Wiki plugin create
+===  1.0.2 - Wiki plugin create
+
+== Usage Guide
+
+https://github.com/brunofonseca/redmine_issue_templates_notes/wiki/Redmine-Issue-Templates-Notes-Usage-Guide
+
+
+
 
 
