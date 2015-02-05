@@ -23,27 +23,23 @@
 						var valor = self.prop("value");
 						var i = 0;
 						var descricao = "";
-						//var select = "<select id='ddl_templates' onchange='changeFunc();'>";
 						var select = "<select id='ddl_templates'>";
-						select += "<option selected>---</option><optgroup label='" + self.text() + "'>";
+						select += "<option selected>--- <%= l(:lbl_select) %> ---</option><optgroup label='" + self.text() + "'>";
 						for (i = 0; i < html.length; i++) {
 							if (html[i].issue_templates_note.tracker_id == valor) {
-								//descricao = html[i].issue_templates_note.description;
 								select += "<option>" + html[i].issue_templates_note.template_name + "</option>";
 							}
 						}
 						select += "</optgroup></select>";
 						$("#containerTemplate").html("");
-						$("#containerTemplate").append(select);	
-						
+						$("#containerTemplate").append(select);
 						$("#ddl_templates").on("change", function (data) {							
 							$("#ddl_templates").find("option").each(function () { 
 								if ($(this).is(":selected") == true) {									
 									var self = $(this);
 									for (i = 0; i < html.length; i++) {
 										if (html[i].issue_templates_note.template_name ==  self.text())	{
-											$("#issue_notes.wiki-edit").text("");
-											$("#issue_notes.wiki-edit").text(html[i].issue_templates_note.description);
+											$("#issue_notes.wiki-edit").val(html[i].issue_templates_note.description);
 										}
 									}																		
 								}
@@ -54,22 +50,16 @@
 							var self = $(this);
 							for (i = 0; i < html.length; i++) {
 								if (html[i].issue_templates_note.template_name ==  self.text())	{
-									$("#issue_notes.wiki-edit").text("");
-									$("#issue_notes.wiki-edit").text(html[i].issue_templates_note.description);
+									$("#issue_notes.wiki-edit").val(html[i].issue_templates_note.description);
 								}
 							}							
-						});					
-										
-						
-						//$("#issue_notes.wiki-edit").text(descricao);												
+						});
 					});
 				}
 			});		
 		}).trigger("change");
 	});
-	
-	function teste() {}
-	
+
 	function changeFunc() {
 		$("#ddl_templates").find("option").each(function () { 
 			if ($(this).is(":selected") == true) { 
@@ -77,15 +67,28 @@
 			} 
 		});
 	}
+
+	function clearText(){
+		$("#issue_notes.wiki-edit").val('');
+	}
 </script>
 
 <%= stylesheet_link_tag  "issue_templates_notes",  :media => "all" %>
 <% return '' unless @project.module_enabled? :issue_templates_notes %>
 <br/>
+<br/>
 <fieldset id='fieldset_templates'>
-	<legend>
-		<%= l(:lbl_select_a_template)%>
-	</legend>
-	<div id='containerTemplate'></div>
-</fieldset>
+  <legend>Templates de Nota </legend>
+  <table>
+	<thead>
+		<tr>
+			  <th><%= l(:lbl_select_a_template)%> :</th>
+		  	  <th><div id='containerTemplate'></div></th>
+		      <th> <a class="icon icon-erase" onclick="clearText()"><%= l(:lbl_clear_note_description)%></a><i class="icon icon-del"></i></th>
 
+		</tr>
+	</thead>
+  </table>
+</fieldset>
+<br/>
+<br/>

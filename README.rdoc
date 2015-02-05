@@ -27,6 +27,8 @@ Works on version 2.3.x , 2.5.x and 2.6.x of Redmine
 
 == Feature Changelog
 
-=== 1.0.0 
+=== 1.0.0
 
-First Commit
+=== 1.0.1 - Incremented a new layou for presentation plugin in view and actualized jQuery attributes.
+
+

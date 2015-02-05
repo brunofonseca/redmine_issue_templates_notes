@@ -38,3 +38,5 @@ pt-br:
   template_notes: "Template de Notas"
   description: Descricao
   back: Voltar
+  lbl_select: Selecione
+  lbl_clear_note_description: Limpar descrição da nota
