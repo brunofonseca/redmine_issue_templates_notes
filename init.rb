@@ -8,7 +8,7 @@ Redmine::Plugin.register :redmine_issue_templates_notes do
   author 'Bruno Fonseca'
   description 'Plugin para template de notas'
   author_url 'https://github.com/brunofonseca'
-  version '0.0.2'
+  version '2.0.0'
   settings :default => {'empty' => true}, :partial => 'settings/redmine_notes'
 
   users_auth = TemplateNoteSettings.new
