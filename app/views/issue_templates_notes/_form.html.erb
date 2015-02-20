@@ -35,11 +35,7 @@
 	</table>
 </div>
 <div class="actions">
-  <table>
-	<tr>
-	  <td><%= f.submit l(:txt_save_template)  %></td>
-	  <td><%= link_to l(:button_cancel), {:action => 'index'}, :data => {:confirm => l(:text_are_you_sure)} %></td>
-	</tr>
-	</table>
-
-<% end %>
+	<%= f.submit l(:txt_save_template)  %>
+	<%= link_to l(:button_cancel), {:action => 'index'}, :data => {:confirm => l(:text_are_you_sure)} %>
+	<% end %>
+	</br>

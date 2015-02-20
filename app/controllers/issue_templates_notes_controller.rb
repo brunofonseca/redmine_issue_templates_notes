@@ -5,7 +5,7 @@ class IssueTemplatesNotesController < ApplicationController
   include IssuesHelper
   before_filter :find_user
   before_filter :authorize => :preview
-  before_filter :require_login
+  before_filter :require_login, :require_access_to
   def index
     @issue_templates_notes = IssueTemplatesNote.order(:tracker_id)
     respond_to do |format|
@@ -86,6 +86,15 @@ class IssueTemplatesNotesController < ApplicationController
   def template_send
     @template_note = IssueTemplatesNote.where('enabled = ?', 1)
     render :text => @template_note.to_json
+  end
+
+  def require_access_to
+    @issue_templates_notes_setting = IssueTemplateNoteSetting.find("1")
+    saved = @issue_templates_notes_setting[:user_auth]
+    if(saved.include?("#{User.current.id}") || User.current.admin?)
+      return true
+    end
+      render_403
   end
   
   private

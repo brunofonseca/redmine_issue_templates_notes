@@ -36,6 +36,9 @@ en:
   lbl_select_a_template: Select a template note
   template_notes: "Template Notes"
   description: "Description"
+  txt_permissions: Permissão de acesso
+  txt_user: Usuario
+  txt_usage_plugin : Conceder Permissão
   back: Back
-  lbl_select: Select
-  lbl_clear_note_description: Clear note description
+  field_user_auth: ""
+

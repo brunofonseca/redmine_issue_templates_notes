@@ -1,28 +1,63 @@
-<!-- Esconde o botao de Aplicar --> 
+<!-- Esconde o botao de Aplicar -->
 <script type="text/javascript">
 	$(function(){
 		hidden_button();
 	});
 	function hidden_button() {
-     $("#settings").find("input[type=submit]").css("display", "none");
+		 $("#settings").find("input[name=commit]").css("display", "none");
 	}
 </script>
+
 <!-- fim -->
+
+<h2>Listagem e Adição</h2>
 <table>
-	<tr>
-		<th></th>
-		<th></th>
-		<th></th>
-	</tr>
-	<tr>
-		<td>
-		<div class="icon icon-folder">
-			<%= link_to  l(:list_notes_templates), :action => "index" , :controller => "issue_templates_notes" %> |
-		</div></td>
-		<td>
-		<div class="icon icon-add">
-			<%= link_to l(:add_note_templates), :action => "new" , :controller => "issue_templates_notes" %>
-		</div>
-		</td>
-	</tr>
+  <tr>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+  <tr>
+	<td>
+	  <div class="icon icon-folder">
+		<%= link_to  l(:list_notes_templates), :action => "index" , :controller => "issue_templates_notes" %> |
+	  </div></td>
+	<td>
+	  <div class="icon icon-add">
+		<%= link_to l(:add_note_templates), :action => "new" , :controller => "issue_templates_notes" %>
+	  </div>
+	</td>
+  </tr>
 </table>
+<br/>
+
+<!-- DONT REMOVE THIS FORM -->
+<%= form_for :setting do |f| %>
+<% end %>
+<!-- END -->
+<% @temp_note_setting = IssueTemplateNoteSetting.find("1") %>
+
+<h3>Permissão de acesso</h3>
+<%= labelled_form_for :user_auth, @temp_note_setting.user_auth,
+					  :url => {:controller => 'issue_templates_notes_settings',
+							   :action => 'user_auth'},
+					  :html => {:id => 'issue_templates_notes_settings' } do |f| %>
+		<table class="list groups">
+		  <thead>
+		  <tr>
+			<th style="text-align: left">Usuário  </th>
+			<th>Permitir </th>
+		  </tr>
+		  </thead>
+		  <% User.where('id != ? AND status = ?', 1,1).order('firstname').each do |user|%>
+			  <tbody>
+				  <td style="text-align: left"><%= user.firstname %></td>
+				  <td>
+					<%= hidden_field_tag('seen[]', user.id)%>
+					<%= check_box_tag 'activated[]', user.id,@temp_note_setting.user_auth.include?("#{user.id}")  %>
+				  </td>
+			  </tbody>
+		  <% end %>
+		</table>
+<%= f.submit "Enviar" , :name => 'commit_users_auth'%>
+<% end %>

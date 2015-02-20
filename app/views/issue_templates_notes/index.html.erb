@@ -25,8 +25,11 @@
 		<td><%= template_note.created_on.to_date %></td>
 		<td><%= template_note.updated_on.to_date %></td>
 		<td><%= checked_image template_note.enabled? %></td>
-		<td> <%= link_to l(:lbl_edit_template_note), controller: "issue_templates_notes", action: "edit", id: template_note %> |
-		<%= link_to l(:lbl_delete_template_note), template_note, method: :delete, data: { confirm: l(:msg_confirm_deletion) } %> </td>
+		<td>
+		  <%= link_to l(:lbl_edit_template_note), :controller => "issue_templates_notes", :action => "edit", :id => template_note %>
+		  |
+		  	<%= link_to l(:lbl_delete_template_note), template_note, method: :delete, data: { confirm: l(:msg_confirm_deletion)}%>
+		</td>
 	</tr>
 	<% end %>
 </table>
