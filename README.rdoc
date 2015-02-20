@@ -27,13 +27,13 @@ Works on version 2.3.x , 2.5.x and 2.6.x of Redmine
 
 == Feature Changelog
 
-=== 1.0.0 - Initial commit
+1.0.0 - Initial commit
 
-=== 1.0.1 - Incremented a new layou for presentation plugin in view and actualized jQuery attributes.
+1.0.1 - Incremented a new layou for presentation plugin in view and actualized jQuery attributes.
 
-=== 1.0.2 - Wiki plugin create
+1.0.2 - Wiki plugin create
 
-=== 2.0.0 - Control Painel for user authorization
+2.0.0 - Control Painel for user authorization
 
 == Usage Guide
 

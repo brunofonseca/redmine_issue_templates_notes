@@ -10,7 +10,7 @@
 
 <!-- fim -->
 
-<h2>Listagem e Adição</h2>
+<h2><%= l(:lbl_list_and_add)%></h2>
 <table>
   <tr>
 	<th></th>
@@ -37,7 +37,7 @@
 <!-- END -->
 <% @temp_note_setting = IssueTemplateNoteSetting.find("1") %>
 
-<h3>Permissão de acesso</h3>
+<h2><%= l(:txt_permissions)%></h2>
 <%= labelled_form_for :user_auth, @temp_note_setting.user_auth,
 					  :url => {:controller => 'issue_templates_notes_settings',
 							   :action => 'user_auth'},
