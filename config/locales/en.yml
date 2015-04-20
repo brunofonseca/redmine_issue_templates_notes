@@ -36,9 +36,9 @@ en:
   lbl_select_a_template: Select a template note
   template_notes: "Template Notes"
   description: "Description"
-  txt_permissions: Permissão de acesso
-  txt_user: Usuario
-  txt_usage_plugin : Conceder Permissão
+  txt_permissions: Access permission
+  txt_user: User
+  txt_usage_plugin : Grant Permission
   back: Back
   field_user_auth: ""
-  lbl_list_and_add: "Listagem e Adição"
+  lbl_list_and_add: "Listing and Addition"
