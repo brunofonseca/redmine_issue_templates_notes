@@ -46,6 +46,7 @@ class IssueTemplatesNotesController < ApplicationController
           redirect_to :controller => "issue_templates_notes",:action => "index"
         }
       else
+        flash[:error] = l(:msg_template_exists)
         format.html { render action: "new" }
         format.json { render json: @issue_templates_note.errors, status: :unprocessable_entity }
       end
@@ -61,6 +62,7 @@ class IssueTemplatesNotesController < ApplicationController
           redirect_to :contoller => "issues_templates_notes",:action => "index"
         }
       else
+        flash[:error] = l(:msg_notice_sucess_updated)
         format.html { render action: "edit" }
         format.json { render json: @issue_templates_note.errors, status: :unprocessable_entity }
       end

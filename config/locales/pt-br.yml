@@ -43,3 +43,4 @@ pt-br:
   back: Voltar
   field_user_auth: ""
   lbl_list_and_add: "Listagem e Adição"
+  msg_template_exists: "O registro já existe"

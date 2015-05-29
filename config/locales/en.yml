@@ -42,3 +42,4 @@ en:
   back: Back
   field_user_auth: ""
   lbl_list_and_add: "Listagem e Adição"
+  msg_template_exists: "This template has include!"
