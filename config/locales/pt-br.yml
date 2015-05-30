@@ -9,6 +9,7 @@ pt-br:
   txt_permissions: Permissão de acesso
   txt_user: Usuário
   txt_usage_plugin : Conceder permissão
+  txt_send : Enviar
   lbl_tracker : Tipo
   lbl_template_name: Nome do Template
   lbl_tracker_id : Tipo

@@ -9,6 +9,7 @@ en:
   txt_permissions: Access permission
   txt_user: User
   txt_usage_plugin : Allow access
+  txt_send : Send
   lbl_tracker : Type
   lbl_template_name: Template name
   lbl_tracker_id : Type
