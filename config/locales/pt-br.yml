@@ -1,25 +1,23 @@
 #encoding :UTF-8
 pt-br:
-  notes : Notas
-  issue_templates_notes: Templates de Notas
-  notes_templates: Notas
-  list_notes_templates:  Listar Templates de Notas
-  add_note_templates: Adicionar Template de Notas
   txt_save_template : Salvar Template
   txt_back : Voltar
   txt_issue_template_note_add : Issue Templates Notes / Novo
   txt_select_a_template: Selecione um Template de Notas
   txt_issue_templates_notes_list : Issue Templates Notes   
   txt_new_template_note: Novo Template de Notas
+  txt_permissions: Permissão de acesso
+  txt_user: Usuário
+  txt_usage_plugin : Conceder permissão
   lbl_tracker : Tipo
   lbl_template_name: Nome do Template
   lbl_tracker_id : Tipo
   lbl_project_id : Projeto
   lbl_author : Autor
-  lbl_description : Descricao    
+  lbl_description : Descrição
   lbl_enabled : Ativo
-  lbl_ordenation : Ordenacao
-  lbl_options : Opcoes
+  lbl_ordenation : Ordenação
+  lbl_options : Opções
   lbl_created_on : Criado em 
   lbl_updated_on : Modificado em 
   lbl_edit_template_note: Editar
@@ -27,20 +25,23 @@ pt-br:
   lbl_author: Autor
   lbl_tracker_type: Tipo da Tarefa
   msg_confirm_deletion: Deseja apagar este Template de Notas?
-  msg_confirm_fields : "Preencha corretamente o campo "
-  msg_notice_sucess_create:  "Template de notas criada com sucesso!"
-  msg_notice_sucess_updated: "Template de notas editado com sucesso!"
-  msg_notice_sucess_deleted: "Template de notas deletado com sucesso!"
-  msg_error: "Ocorreu um erro ao excluir o registro"
-  template_name: "Nome Template"
-  tracker : "Tipo"
+  msg_confirm_fields : Preencha corretamente o campo
+  msg_notice_sucess_create:  Template de notas criada com sucesso!
+  msg_notice_sucess_updated: Template de notas editado com sucesso!
+  msg_notice_sucess_deleted: Template de notas deletado com sucesso!
+  msg_error: Ocorreu um erro ao excluir o registro
+  msg_template_exists: O registro já existe
+  notes : Notas
+  issue_templates_notes: Templates de Notas
+  notes_templates: Notas
+  list_notes_templates:  Listar Templates de Notas
+  add_note_templates: Adicionar Template de Notas
+  template_name: Nome Template
+  tracker : Tipo
   lbl_select_a_template: Selecione um Template de Notas
-  template_notes: "Template de Notas"
-  description: Descricao
-  txt_permissions: Permissão de acesso
-  txt_user: Usuario
-  txt_usage_plugin : Conceder Permissão
+  template_notes: Template de Notas
+  description: Descrição
   back: Voltar
   field_user_auth: ""
-  lbl_list_and_add: "Listagem e Adição"
-  msg_template_exists: "O registro já existe"
+  lbl_list_and_add: Listagem e Adição
+

@@ -1,45 +1,46 @@
-# English strings go here for Rails i18n
+#encoding :UTF-8
 en:
-  notes : Notes
-  issue_templates_notes: Issue Templates Notes
-  notes_templates: Notes
-  list_notes_templates:  List templates notes
-  add_note_templates: Add Template Note
-  txt_save_template : Save Template
+  txt_save_template : Save template
   txt_back : Back
-  txt_issue_template_note_add : Issue templates notes / Add
-  txt_issue_templates_notes_list : Issue template notes
-  txt_select_a_template: Select a template  
-  lbl_tracker : Tracker
+  txt_issue_template_note_add : Issue Templates Notes / New
+  txt_select_a_template: Select a template note
+  txt_issue_templates_notes_list : Issue Templates Notes   
+  txt_new_template_note: New Template de Notas
+  txt_permissions: Access permission
+  txt_user: User
+  txt_usage_plugin : Allow access
+  lbl_tracker : Type
   lbl_template_name: Template name
   lbl_tracker_id : Type
   lbl_project_id : Project
   lbl_author : Author
-  lbl_description : Description    
-  lbl_enabled : Enabled
+  lbl_description : Description
+  lbl_enabled : Active
   lbl_ordenation : Ordenation
   lbl_options : Options
-  lbl_created_on : Criated on 
-  lbl_updated_on : Updated on
+  lbl_created_on : Created at
+  lbl_updated_on : Updated at
   lbl_edit_template_note: Edit
   lbl_delete_template_note: Delete
   lbl_author: Author
   lbl_tracker_type: Tracker type
-  msg_confirm_deletion: Do you really wish delete this Template note?  
-  msg_confirm_fields : "Fill out the field "
-  msg_notice_sucess_create:  "Note created sucessfull"
-  msg_notice_sucess_updated:  "Note edited sucessfull"
-  msg_notice_sucess_deleted: "Note deleted sucessfull"
-  msg_error: "A error ocurred in operation of exclusion."
-  template_name: "Name Template"
-  tracker : "Type"
+  msg_confirm_deletion: Do you delete this template note?
+  msg_confirm_fields : Insert correctly this field
+  msg_notice_sucess_create:  Template note created successful!
+  msg_notice_sucess_updated: Template note updated successful!
+  msg_notice_sucess_deleted: Template note deleted successful!
+  msg_error: An error ocurred in template exclusion.
+  msg_template_exists: This template exists.
+  notes : Notes
+  issue_templates_notes: Template notes
+  notes_templates: Notes
+  list_notes_templates:  List templates notes
+  add_note_templates: Add template note
+  template_name: Template name
+  tracker : Type
   lbl_select_a_template: Select a template note
-  template_notes: "Template Notes"
-  description: "Description"
-  txt_permissions: Permissão de acesso
-  txt_user: Usuario
-  txt_usage_plugin : Conceder Permissão
+  template_notes: Template notes
+  description: Description
   back: Back
   field_user_auth: ""
-  lbl_list_and_add: "Listagem e Adição"
-  msg_template_exists: "This template has include!"
+  lbl_list_and_add: List and Add

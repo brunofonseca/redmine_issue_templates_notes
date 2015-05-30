@@ -34,5 +34,8 @@
 	<% end %>
 </table>
 <br/>
-
-<%= link_to l(:back), :controller => "issue_templates_notes_settings", :action => "back_partial_init" %>
+<% if(User.current.admin?) %>
+	<%= link_to l(:back), :controller => "issue_templates_notes_settings", :action => "back_partial_init" %>
+<% else %>
+	<%= link_to l(:back), :controller => "my", :action => "index" %>
+<% end %>

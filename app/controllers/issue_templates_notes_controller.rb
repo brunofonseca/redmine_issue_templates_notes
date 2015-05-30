@@ -8,6 +8,7 @@ class IssueTemplatesNotesController < ApplicationController
   before_filter :require_login, :require_access_to
   def index
     @issue_templates_notes = IssueTemplatesNote.order(:tracker_id)
+    @user_logged = User.current
     respond_to do |format|
       format.html
       format.json { render json: @issue_templates_notes }
