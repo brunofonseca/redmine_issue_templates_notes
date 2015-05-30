@@ -35,6 +35,8 @@ Works on version 2.3.x , 2.5.x and 2.6.x of Redmine
 
 2.0.0 - Control Painel for user authorization
 
+2.0.1 - Standardization in the translations and improved ajax.
+
 == Usage Guide
 
 https://github.com/brunofonseca/redmine_issue_templates_notes/wiki/Redmine-Issue-Templates-Notes-Usage-Guide
