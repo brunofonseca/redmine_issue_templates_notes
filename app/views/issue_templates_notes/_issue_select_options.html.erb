@@ -1,25 +1,21 @@
-
 <script type="text/javascript">
 	token = '<%= form_authenticity_token %>';
 	load_url = '<%= url_for(:controller => 'issue_templates_notes',:action => 'template_send') %>';
-		
-	$(function() {	
-		
-		var triggerMudanca = $("#issue_tracker_id").attr("onchange");		
-		triggerMudanca = "teste();";
-		$("#issue_tracker_id").attr("onchange", triggerMudanca); 
-				
-		$("#issue_tracker_id").change(function() {		
-			$("#issue_notes.wiki-edit").text("");	
-			$("#issue_tracker_id option:selected").each(function() {				
+
+	$(function() {
+		var triggerMudanca = $("#issue_tracker_id").attr("onchange");
+		$("#issue_tracker_id").attr("onchange", triggerMudanca);
+		$("#issue_tracker_id").change(function() {
+			$("#issue_notes.wiki-edit").text("");
+			$("#issue_tracker_id option:selected").each(function() {
 				if ($(this).text() != "Select a template") {
-					var self = $(this);		
+					var self = $(this);
 					$.ajax({
 						url :load_url,
 						async : true,
 						type : "get",
 						dataType : "json"
-					}).done(function(html) {								
+					}).done(function(html) {
 						var valor = self.prop("value");
 						var i = 0;
 						var descricao = "";
@@ -33,38 +29,38 @@
 						select += "</optgroup></select>";
 						$("#containerTemplate").html("");
 						$("#containerTemplate").append(select);
-						$("#ddl_templates").on("change", function (data) {							
-							$("#ddl_templates").find("option").each(function () { 
-								if ($(this).is(":selected") == true) {									
+						$("#ddl_templates").on("change", function (data) {
+							$("#ddl_templates").find("option").each(function () {
+								if ($(this).is(":selected") == true) {
 									var self = $(this);
 									for (i = 0; i < html.length; i++) {
 										if (html[i].issue_templates_note.template_name ==  self.text())	{
 											$("#issue_notes.wiki-edit").val(html[i].issue_templates_note.description);
 										}
-									}																		
+									}
 								}
-							});		
+							});
 						});
-						
-						$("#ddl_templates > option").on("click", function(data) {								
+
+						$("#ddl_templates > option").on("click", function(data) {
 							var self = $(this);
 							for (i = 0; i < html.length; i++) {
 								if (html[i].issue_templates_note.template_name ==  self.text())	{
 									$("#issue_notes.wiki-edit").val(html[i].issue_templates_note.description);
 								}
-							}							
+							}
 						});
 					});
 				}
-			});		
+			});
 		}).trigger("change");
 	});
 
 	function changeFunc() {
-		$("#ddl_templates").find("option").each(function () { 
-			if ($(this).is(":selected") == true) { 
-				alert($(this).text()); 
-			} 
+		$("#ddl_templates").find("option").each(function () {
+			if ($(this).is(":selected") == true) {
+				alert($(this).text());
+			}
 		});
 	}
 
@@ -73,8 +69,8 @@
 	}
 </script>
 
-<%= stylesheet_link_tag  "issue_templates_notes",  :media => "all" %>
 <% return '' unless @project.module_enabled? :issue_templates_notes %>
+
 <br/>
 <br/>
 <fieldset id='fieldset_templates'>
@@ -84,7 +80,13 @@
 		<tr>
 			  <th><%= l(:lbl_select_a_template)%> :</th>
 		  	  <th><div id='containerTemplate'></div></th>
-		      <th> <a class="icon icon-erase" onclick="clearText()"><%= l(:lbl_clear_note_description)%></a><i class="icon icon-del"></i></th>
+		      <th></th>
+		      <th>
+					<a onclick="clearText()">
+					  <i class="icon icon-del"></i>
+					  <%= l(:lbl_clear_note_description)%>
+					</a>
+			  </th>
 
 		</tr>
 	</thead>

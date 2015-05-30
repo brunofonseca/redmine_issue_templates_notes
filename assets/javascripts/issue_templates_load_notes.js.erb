@@ -1,0 +1,71 @@
+token = '<%= form_authenticity_token %>';
+load_url = '<%= url_for(:controller => 'issue_templates_notes',:action => 'template_send') %>';
+
+$(function() {
+
+    var triggerMudanca = $("#issue_tracker_id").attr("onchange");
+    triggerMudanca = "teste();";
+    $("#issue_tracker_id").attr("onchange", triggerMudanca);
+
+    $("#issue_tracker_id").change(function() {
+        $("#issue_notes.wiki-edit").text("");
+        $("#issue_tracker_id option:selected").each(function() {
+            if ($(this).text() != "Select a template") {
+                var self = $(this);
+                $.ajax({
+                    url :load_url,
+                    async : true,
+                    type : "get",
+                    dataType : "json"
+                }).done(function(html) {
+                    var valor = self.prop("value");
+                    var i = 0;
+                    var descricao = "";
+                    var select = "<select id='ddl_templates'>";
+                    select += "<option selected>--- <%= l(:lbl_select) %> ---</option><optgroup label='" + self.text() + "'>";
+                    for (i = 0; i < html.length; i++) {
+                        if (html[i].issue_templates_note.tracker_id == valor) {
+                            select += "<option>" + html[i].issue_templates_note.template_name + "</option>";
+                        }
+                    }
+                    select += "</optgroup></select>";
+                    $("#containerTemplate").html("");
+                    $("#containerTemplate").append(select);
+                    $("#ddl_templates").on("change", function (data) {
+                        $("#ddl_templates").find("option").each(function () {
+                            if ($(this).is(":selected") == true) {
+                                var self = $(this);
+                                for (i = 0; i < html.length; i++) {
+                                    if (html[i].issue_templates_note.template_name ==  self.text())	{
+                                        $("#issue_notes.wiki-edit").val(html[i].issue_templates_note.description);
+                                    }
+                                }
+                            }
+                        });
+                    });
+
+                    $("#ddl_templates > option").on("click", function(data) {
+                        var self = $(this);
+                        for (i = 0; i < html.length; i++) {
+                            if (html[i].issue_templates_note.template_name ==  self.text())	{
+                                $("#issue_notes.wiki-edit").val(html[i].issue_templates_note.description);
+                            }
+                        }
+                    });
+                });
+            }
+        });
+    }).trigger("change");
+});
+
+function changeFunc() {
+    $("#ddl_templates").find("option").each(function () {
+        if ($(this).is(":selected") == true) {
+            alert($(this).text());
+        }
+    });
+}
+
+function clearText(){
+    $("#issue_notes.wiki-edit").val('');
+}
