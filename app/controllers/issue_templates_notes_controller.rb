@@ -39,7 +39,7 @@ class IssueTemplatesNotesController < ApplicationController
   end
 
   def create
-    @issue_templates_note = IssueTemplatesNote.new(params[:issue_templates_note])
+    @issue_templates_note = IssueTemplatesNote.new(issue_template_note_params)
     respond_to do |format|
       if @issue_templates_note.save
         format.html {
@@ -106,4 +106,9 @@ class IssueTemplatesNotesController < ApplicationController
   def find_user
     @user = User.current
   end
+
+   def issue_template_note_params
+    params.require(:issue_templates_note).permit(:all)
+  end
+
 end
