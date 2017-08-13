@@ -14,9 +14,9 @@ Redmine::Plugin.register :redmine_issue_templates_notes do
 
   users_auth = TemplateNoteSettings.new
 
-  menu :admin_menu, :redmine_issue_templates_notes, {:controller => 'issue_templates_notes_settings',:action => 'back_partial_init'}, :caption => :template_notes, :after => :settings #, :if => Proc.new{User.current.admin?}
-
-  menu :top_menu, :redmine_issue_templates_notes, {
+  menu :admin_menu, :redmine_issue_templates_notes, {:controller => 'issue_templates_notes_settings',:action => 'back_partial_init'}, :caption => :template_notes, :after => :settings, :html => {:class => 'icon'} #, :if => Proc.new{User.current.admin?}
+  
+    menu :top_menu, :redmine_issue_templates_notes, {
                     :controller => 'issue_templates_notes',
                     :action => 'index' },
        :last => true,
