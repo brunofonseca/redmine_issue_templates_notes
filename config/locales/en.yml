@@ -28,6 +28,7 @@ en:
   lbl_clear_note_description : Clear description
   lbl_select_a_template: Select a template note
   lbl_select: Select
+  val_select: Select
   msg_confirm_deletion: Do you delete this template note?
   msg_confirm_fields : Insert correctly this field
   msg_notice_sucess_create:  Template note created successful!

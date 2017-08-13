@@ -28,6 +28,7 @@ pt-br:
   lbl_clear_note_description : Limpar descrição
   lbl_select_a_template: Selecione um Template de Notas
   lbl_select: Selecione
+  val_select: Selecione
   msg_confirm_deletion: Deseja apagar este Template de Notas?
   msg_confirm_fields : Preencha corretamente o campo
   msg_notice_sucess_create:  Template de notas criada com sucesso!
