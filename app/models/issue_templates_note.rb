@@ -13,14 +13,14 @@ class IssueTemplatesNote < ActiveRecord::Base
 
   #validates_uniqueness_of :template_name
 
-  before_save :validade_if_exist, :only => [:create,:update,:new]
+  #before_save :validade_if_exist, :only => [:create,:update,:new]
 
   safe_attributes 'template_name', 'description', 'tracker_id', 'enabled'
 
-  def validade_if_exist
-    if IssueTemplatesNote.exists?(["template_name = ? AND tracker_id = ? ",template_name, tracker_id])
-      return false
-    end
-  end
+  #def validade_if_exist
+  #  if IssueTemplatesNote.exists?(["template_name = ? AND tracker_id = ? ",template_name, tracker_id])
+  #    return false
+  #  end
+  #end
 
 end

@@ -39,7 +39,7 @@ class IssueTemplatesNotesController < ApplicationController
   end
 
   def create
-    @issue_templates_note = IssueTemplatesNote.new(params[:issue_templates_note])
+    @issue_templates_note = IssueTemplatesNote.new(issue_templates_note_params)
     respond_to do |format|
       if @issue_templates_note.save
         format.html {
@@ -47,7 +47,7 @@ class IssueTemplatesNotesController < ApplicationController
           redirect_to :controller => "issue_templates_notes",:action => "index"
         }
       else
-        flash[:error] = l(:msg_template_exists)
+        #flash[:error] = l(:msg_template_exists)
         format.html { render action: "new" }
         format.json { render json: @issue_templates_note.errors, status: :unprocessable_entity }
       end
@@ -57,7 +57,7 @@ class IssueTemplatesNotesController < ApplicationController
   def update
     @issue_templates_note = IssueTemplatesNote.find(params[:id])
     respond_to do |format|
-      if @issue_templates_note.update_attributes(params[:issue_templates_note])
+      if @issue_templates_note.update_attributes(issue_templates_note_params)
         format.html {
           flash[:notice] = l(:msg_notice_sucess_updated)
           redirect_to :contoller => "issues_templates_notes",:action => "index"
@@ -101,6 +101,10 @@ class IssueTemplatesNotesController < ApplicationController
   end
   
   private
+
+  def issue_templates_note_params
+    params.require(:issue_templates_note).permit(:template_name,:tracker_id,:author_id,:description,:enabled)
+  end
 
   #find the instance of user current
   def find_user
