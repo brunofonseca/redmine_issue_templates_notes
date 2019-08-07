@@ -3,9 +3,9 @@ en:
   txt_save_template : Save template
   txt_back : Back
   txt_issue_template_note_add : Issue Templates Notes / New
-  txt_select_a_template: Select a template note
+  txt_select_a_template: Select a note template
   txt_issue_templates_notes_list : Issue Templates Notes   
-  txt_new_template_note: New Template de Notas
+  txt_new_template_note: New Note Template
   txt_permissions: Access permission
   txt_user: User
   txt_usage_plugin : Allow access
@@ -26,20 +26,22 @@ en:
   lbl_author: Author
   lbl_tracker_type: Tracker type
   lbl_clear_note_description : Clear description
-  lbl_select_a_template: Select a template note
+  lbl_select_a_template: Select a note template
   lbl_select: Select
-  msg_confirm_deletion: Do you delete this template note?
-  msg_confirm_fields : Insert correctly this field
-  msg_notice_sucess_create:  Template note created successful!
-  msg_notice_sucess_updated: Template note updated successful!
-  msg_notice_sucess_deleted: Template note deleted successful!
+  msg_confirm_deletion: Do you want to delete this note template?
+  msg_confirm_fields : Please fill in this field
+  msg_notice_sucess_create:  Template created successfully!
+  msg_notice_error_create:  Unable to create template!
+  msg_notice_sucess_updated: Template updated successfully!
+  msg_notice_error_updated: Unable to update Template!
+  msg_notice_sucess_deleted: Template deleted successfully!
   msg_error: An error ocurred in template exclusion.
   msg_template_exists: This template exists.
   notes : Notes
   issue_templates_notes: Template notes
   notes_templates: Notes
-  list_notes_templates:  List templates notes
-  add_note_templates: Add template note
+  list_notes_templates:  List note templates
+  add_note_templates: Add note template
   template_name: Template name
   tracker : Type
   template_notes: Template notes
