@@ -21,7 +21,7 @@
 		</tr>
 		<tr>
 			<td><b><%= f.label l(:lbl_tracker_id) %></b> : <b/></td>
-			<td><%= f.collection_select :tracker_id, Tracker.all, :id, :name, :prompt => 'Selecione' %></td>
+			<td><%= f.collection_select :tracker_id, Tracker.all, :id, :name, :prompt => "All Trackers" %></td>
 		</tr>
 		<tr>
 			<td><b><%= f.label l(:lbl_description) %></b> * :<b/></td>

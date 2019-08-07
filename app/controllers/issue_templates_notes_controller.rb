@@ -43,7 +43,7 @@ class IssueTemplatesNotesController < ApplicationController
     respond_to do |format|
       if @issue_templates_note.save
         format.html {
-          flash[:notice] = l(:msg_notice_sucess_create)
+          flash[:notice] = l(:msg_notice_error_create)
           redirect_to :controller => "issue_templates_notes",:action => "index"
         }
       else
@@ -63,7 +63,7 @@ class IssueTemplatesNotesController < ApplicationController
           redirect_to :contoller => "issues_templates_notes",:action => "index"
         }
       else
-        flash[:error] = l(:msg_notice_sucess_updated)
+        flash[:error] = l(:msg_notice_error_updated)
         format.html { render action: "edit" }
         format.json { render json: @issue_templates_note.errors, status: :unprocessable_entity }
       end
