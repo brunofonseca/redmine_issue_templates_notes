@@ -88,7 +88,7 @@ class IssueTemplatesNotesController < ApplicationController
 
   def template_send
     @template_note = IssueTemplatesNote.where('enabled = ?', 1)
-    render :text => @template_note.to_json
+    render :json => @template_note.to_json
   end
 
   def require_access_to
