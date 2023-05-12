@@ -8,7 +8,7 @@
       $("#issue_tracker_id").change(function() {
 	  $("#issue_notes.wiki-edit").text("");
 	  $("#issue_tracker_id option:selected").each(function() {
-	      if ($(this).text() != "Select a template") {
+	      if ($(this).text() != "<%= l(:lbl_select_a_template) %>") {
 		  var self = $(this);
 		  $.ajax({
 		      url :load_url,
@@ -78,7 +78,7 @@
 <br/>
 <br/>
 <fieldset id='fieldset_templates'>
-  <legend>Templates de Nota </legend>
+  <legend><%= l(:issue_templates_notes) %> </legend>
   <table>
     <thead>
       <tr>
