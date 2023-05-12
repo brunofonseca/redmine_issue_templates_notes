@@ -3,9 +3,9 @@ class IssueTemplatesNotesController < ApplicationController
   include IssueTemplatesNotesHelper
   helper :issues
   include IssuesHelper
-  before_filter :find_user
-  before_filter :authorize => :preview
-  before_filter :require_login, :require_access_to
+  before_action :find_user
+  before_action :authorize => :preview
+  before_action :require_login, :require_access_to
   def index
     @issue_templates_notes = IssueTemplatesNote.order(:tracker_id)
     @user_logged = User.current

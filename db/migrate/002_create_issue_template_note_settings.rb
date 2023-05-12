@@ -1,4 +1,4 @@
-class CreateIssueTemplateNoteSettings < ActiveRecord::Migration
+class CreateIssueTemplateNoteSettings < ActiveRecord::Migration[4.2]
 
   def self.up
     create_table :issue_template_note_settings do |t|

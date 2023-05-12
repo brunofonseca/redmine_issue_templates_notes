@@ -1,6 +1,6 @@
-require 'redmine'
-require 'admin_menu_hooks'
-require 'issue_templates_notes_hook'
+#require 'redmine'
+require_dependency 'admin_menu_hooks'
+require_dependency 'issue_templates_notes_hook'
 require 'template_notes_permissions'
 
 Redmine::Plugin.register :redmine_issue_templates_notes do
@@ -8,7 +8,7 @@ Redmine::Plugin.register :redmine_issue_templates_notes do
   author 'Bruno Fonseca'
   description 'Plugin para template de notas'
   author_url 'https://github.com/brunofonseca'
-  version '2.0.0'
+  version '2.0.1'
 
   settings :default => {'empty' => true}, :partial => 'settings/redmine_notes'
 
