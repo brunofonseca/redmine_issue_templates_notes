@@ -20,10 +20,17 @@
 						var i = 0;
 						var descricao = "";
 						var select = "<select id='ddl_templates'>";
-						select += "<option selected>--- <%= l(:lbl_select) %> ---</option><optgroup label='" + self.text() + "'>";
+						select += "<option selected>--- <%= l(:lbl_select) %> ---</option>";
+                        select += "<optgroup label='All Trackers'>"
 						for (i = 0; i < html.length; i++) {
-							if (html[i].issue_templates_note.tracker_id == valor) {
-								select += "<option>" + html[i].issue_templates_note.template_name + "</option>";
+							if (html[i].tracker_id === null) {
+								select += "<option>" + html[i].template_name + "</option>";
+							}
+						}
+						select += "</optgroup><optgroup label='" + self.text() + "'>";
+						for (i = 0; i < html.length; i++) {
+							if (html[i].tracker_id == valor) {
+								select += "<option>" + html[i].template_name + "</option>";
 							}
 						}
 						select += "</optgroup></select>";
@@ -34,8 +41,8 @@
 								if ($(this).is(":selected") == true) {
 									var self = $(this);
 									for (i = 0; i < html.length; i++) {
-										if (html[i].issue_templates_note.template_name ==  self.text())	{
-											$("#issue_notes.wiki-edit").val(html[i].issue_templates_note.description);
+										if (html[i].template_name ==  self.text())	{
+											$("#issue_notes.wiki-edit").val(html[i].description);
 										}
 									}
 								}
@@ -69,12 +76,11 @@
 	}
 </script>
 
-<% return '' unless @project.module_enabled? :issue_templates_notes %>
+<% return '' unless (@project.module_enabled?(:issue_templates_notes) && IssueTemplatesNotesHelper::authorized_user) %>
 
 <br/>
-<br/>
 <fieldset id='fieldset_templates'>
-  <legend>Templates de Nota </legend>
+  <legend><%= l(:issue_templates_notes) %></legend>
   <table>
 	<thead>
 		<tr>
@@ -92,5 +98,4 @@
 	</thead>
   </table>
 </fieldset>
-<br/>
 <br/>
