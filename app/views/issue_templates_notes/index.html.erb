@@ -19,7 +19,7 @@
 	</tr>
 	<% @issue_templates_notes.order(:template_name).each do |template_note| %>
 	<tr class="box tabular">
-		<td><%= (template_note.tracker ? template_note.tracker : "All Trackers") %></td>
+		<td><%= (template_note.tracker) %></td>
 		<td><%= link_to template_note.template_name, controller: "issue_templates_notes", action: "edit", id: template_note %></td>
 		<td><%= template_note.author %></td>
 		<td><%= template_note.created_on.to_date %></td>

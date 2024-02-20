@@ -8,10 +8,10 @@ class IssueTemplatesNote < ActiveRecord::Base
   alias_attribute :name_template, :template_name
 
   validates_presence_of :template_name
-  #validates_presence_of :tracker
+  validates_presence_of :tracker
   validates_presence_of :description
 
-  validates_uniqueness_of :template_name, scope: :tracker_id
+  #validates_uniqueness_of :template_name
 
   #before_save :validade_if_exist, :only => [:create,:update,:new]
 

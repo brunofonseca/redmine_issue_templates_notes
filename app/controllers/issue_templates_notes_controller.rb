@@ -3,9 +3,9 @@ class IssueTemplatesNotesController < ApplicationController
   include IssueTemplatesNotesHelper
   helper :issues
   include IssuesHelper
-  before_filter :find_user
-  before_filter :authorize => :preview
-  before_filter :require_login, :require_access_to
+  before_action :find_user
+  before_action :authorize => :preview
+  before_action :require_login, :require_access_to
   def index
     @issue_templates_notes = IssueTemplatesNote.order(:tracker_id)
     @user_logged = User.current
@@ -43,7 +43,7 @@ class IssueTemplatesNotesController < ApplicationController
     respond_to do |format|
       if @issue_templates_note.save
         format.html {
-          flash[:notice] = l(:msg_notice_error_create)
+          flash[:notice] = l(:msg_notice_sucess_create)
           redirect_to :controller => "issue_templates_notes",:action => "index"
         }
       else
@@ -63,7 +63,7 @@ class IssueTemplatesNotesController < ApplicationController
           redirect_to :contoller => "issues_templates_notes",:action => "index"
         }
       else
-        flash[:error] = l(:msg_notice_error_updated)
+        flash[:error] = l(:msg_notice_sucess_updated)
         format.html { render action: "edit" }
         format.json { render json: @issue_templates_note.errors, status: :unprocessable_entity }
       end
@@ -88,7 +88,7 @@ class IssueTemplatesNotesController < ApplicationController
 
   def template_send
     @template_note = IssueTemplatesNote.where('enabled = ?', 1)
-    render :text => @template_note.to_json
+    render :json => @template_note.to_json
   end
 
   def require_access_to

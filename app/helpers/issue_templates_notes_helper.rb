@@ -1,12 +1,9 @@
 module IssueTemplatesNotesHelper
-
-  def self.authorized_user
-    @issue_templates_notes_setting = IssueTemplateNoteSetting.find("1")
-    saved = @issue_templates_notes_setting[:user_auth]
-    if (saved.include?("#{User.current.id}") || User.current.admin?)
-      return true
-    end
-    return false
-  end
-
+  def preview_link(url, form, target='preview', options={})
+    content_tag 'a', l(:label_preview), {
+        :href => "#",
+        :onclick => %|submitPreview("#{escape_javascript url_for(url)}", "#{escape_javascript form}", "#{escape_javascript target}"); return false;|,
+        :accesskey => accesskey(:preview)
+      }.merge(options)
+  end  
 end
