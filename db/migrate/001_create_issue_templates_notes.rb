@@ -1,4 +1,4 @@
-class CreateIssueTemplatesNotes < ActiveRecord::Migration
+class CreateIssueTemplatesNotes < ActiveRecord::Migration[4.2]
   def change
     create_table :issue_templates_notes do |t|
       t.column :template_name,     :string,     :null => false

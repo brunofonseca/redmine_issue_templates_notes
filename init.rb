@@ -1,7 +1,7 @@
 require 'redmine'
-require 'admin_menu_hooks'
-require 'issue_templates_notes_hook'
-require 'template_notes_permissions'
+require_relative 'lib/admin_menu_hooks'
+require_relative 'lib/issue_templates_notes_hook'
+require_relative 'lib/template_notes_permissions'
 
 Redmine::Plugin.register :redmine_issue_templates_notes do
   name 'Redmine Issue Templates Notes plugin'
