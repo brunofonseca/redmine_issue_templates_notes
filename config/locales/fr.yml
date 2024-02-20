@@ -1,0 +1,47 @@
+# French strings go here for Rails i18n
+fr:
+  notes : Notes
+  issue_templates_notes: Modèle de note
+  notes_templates: Notes
+  list_notes_templates:  Liste des modèles de notes
+  add_note_templates: Ajouter un modèle de note
+  txt_save_template : Sauver le modèle
+  txt_back : Retour
+  txt_issue_template_note_add : Modèle de note / Ajouter
+  txt_issue_templates_notes_list : Liste des modèles
+  txt_select_a_template: Sélectionnez un modèle
+  lbl_tracker : Tracker
+  lbl_template_name: Nom du modèle
+  lbl_tracker_id : Type
+  lbl_project_id : Projet
+  lbl_author : Auteur
+  lbl_description : Description    
+  lbl_enabled : Activer
+  lbl_ordenation : Trié
+  lbl_options : Options
+  lbl_created_on : Créé le
+  lbl_updated_on : Mis à jour le
+  lbl_edit_template_note: Editer
+  lbl_delete_template_note: Supprimer
+  lbl_author: Auteur
+  lbl_tracker_type: Type de Tracker
+  msg_confirm_deletion: Voulez-vous réellement supprimer ce modèle de note ?
+  msg_confirm_fields : Remplissez le champ
+  msg_notice_sucess_create:  Note créée avec succès
+  msg_notice_sucess_updated:  Note éditée avec succès
+  msg_notice_sucess_deleted: Note suprimée avec success
+  msg_error: Une erreur c'est produite lors de l'opération d'exclusion.
+  template_name: Nom du modèle
+  tracker : Type
+  lbl_select_a_template: Sélectionnez un modèle de note
+  template_notes: Modèles de Notes
+  description: Description
+  txt_permissions: Persmission d'accès
+  txt_user: Utilisateur
+  txt_usage_plugin : Accorder la permission
+  back: Retour
+  field_user_auth: 
+  lbl_list_and_add: Listing et Ajout
+  txt_new_template_note: Ajouter un modèle
+  lbl_select: Selectionnez
+  lbl_clear_note_description : Effacer la note
