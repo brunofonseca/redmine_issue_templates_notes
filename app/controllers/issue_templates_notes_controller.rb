@@ -99,7 +99,7 @@ class IssueTemplatesNotesController < ApplicationController
     end
       render_403
   end
-  
+
   private
 
   def issue_templates_note_params

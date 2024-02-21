@@ -7,4 +7,6 @@
 }
 #admin-menu a.redmine-issue-templates-notes { 
    background-image: url(../images/redmine_notes.png); 
+   background-repeat: no-repeat;
+   padding-left: 20px;
 }

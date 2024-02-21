@@ -1,4 +1,4 @@
-#require 'redmine'
+require 'redmine'
 require_relative 'lib/admin_menu_hooks'
 require_relative 'lib/issue_templates_notes_hook'
 require_relative 'lib/template_notes_permissions'

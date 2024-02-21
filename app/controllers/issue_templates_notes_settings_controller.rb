@@ -19,13 +19,13 @@ class IssueTemplatesNotesSettingsController < ApplicationController
         delete_ids = params[:seen] - activated_ids
           saved += activated_ids - @issue_templates_notes_setting[:user_auth]
           saved -= delete_ids
-            @issue_templates_notes_setting.update_attributes(:user_auth => saved)
+            @issue_templates_notes_setting.update(:user_auth => saved)
             @issue_templates_notes_setting.save!
             flash[:notice] = l(:notice_successful_update)
             redirect_to :controller => 'issue_templates_notes_settings', :action => "back_partial_init"
         end
       if params[:activated].nil?
-        @issue_templates_notes_setting.update_attributes(:user_auth => ['0'])
+        @issue_templates_notes_setting.update(:user_auth => ['0'])
         @issue_templates_notes_setting.save!
         flash[:notice] = l(:notice_successful_update)
         redirect_to :controller => 'issue_templates_notes_settings', :action => "back_partial_init"

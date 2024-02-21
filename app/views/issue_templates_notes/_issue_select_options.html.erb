@@ -1,64 +1,64 @@
 <script type="text/javascript">
-  token = '<%= form_authenticity_token %>';
-  load_url = '<%= url_for(:controller => 'issue_templates_notes',:action => 'template_send') %>';
 
-  $(function() {
-      var triggerMudanca = $("#issue_tracker_id").attr("onchange");
-      $("#issue_tracker_id").attr("onchange", triggerMudanca);
-      $("#issue_tracker_id").change(function() {
-	  $("#issue_notes.wiki-edit").text("");
-	  $("#issue_tracker_id option:selected").each(function() {
-	      if ($(this).text() != "<%= l(:lbl_select_a_template) %>") {
-		  var self = $(this);
-		  $.ajax({
-		      url :load_url,
-		      async : true,
-		      type : "get",
-		      dataType : "json"
-		  }).done(function(html) {
-		      var valor = self.prop("value");
-		      var i = 0;
-		      var descricao = "";
+  	token = '<%= form_authenticity_token %>';
+  	load_url = '<%= url_for(:controller => 'issue_templates_notes',:action => 'template_send') %>';
 
-		      var select = $("<select id='ddl_templates'></select>");
-		      select.append($("<option selected></option>").text("--- <%= l(:lbl_select) %> ---"));
-		      var optgroup = $("<optgroup></optgroup>").attr("label", self.text());
-		      select.append(optgroup);
-		      for (i = 0; i < html.length; i++) {
-			  if (html[i].tracker_id == valor) {
-			      optgroup.append($("<option></option>").text(html[i].template_name));
-			  }
-		      }
+	$(function() {
+    	var triggerMudanca = $("#issue_tracker_id").attr("onchange");
+    	$("#issue_tracker_id").attr("onchange", triggerMudanca);
+    	$("#issue_tracker_id").change(function() {
+			$("#issue_notes.wiki-edit").text("");
+			$("#issue_tracker_id option:selected").each(function() {
+	    		if ($(this).text() != "<%= l(:lbl_select_a_template) %>") {
+					var self = $(this);
+					$.ajax({
+						url :load_url,
+						async : true,
+						type : "get",
+						dataType : "json"
+					}).done(function(html) {
+						var valor = self.prop("value");
+						var i = 0;
+						var descricao = "";
 
-		      
-		      $("#containerTemplate").html("");
-		      $("#containerTemplate").append(select);
-		      $("#ddl_templates").on("change", function (data) {
-			  $("#ddl_templates").find("option").each(function () {
-			      if ($(this).is(":selected") == true) {
-				  var self = $(this);
-				  for (i = 0; i < html.length; i++) {
-				      if (html[i].template_name ==  self.text())	{
-					  $("#issue_notes.wiki-edit").val(html[i].description);
-				      }
-				  }
-			      }
-			  });
-		      });
+						var select = $("<select id='ddl_templates'></select>");
+						select.append($("<option selected></option>").text("--- <%= l(:lbl_select) %> ---"));
+						var optgroup = $("<optgroup></optgroup>").attr("label", self.text());
+						select.append(optgroup);
+						for (i = 0; i < html.length; i++) {
+							if (html[i].tracker_id == valor) {
+								optgroup.append($("<option></option>").text(html[i].template_name));
+							}
+						}
 
-		      $("#ddl_templates > option").on("click", function(data) {
-			  var self = $(this);
-			  for (i = 0; i < html.length; i++) {
-			      if (html[i].template_name ==  self.text())	{
-				  $("#issue_notes.wiki-edit").val(html[i].description);
-			      }
-			  }
-		      });
-		  });
-	      }
-	  });
-      }).trigger("change");
-  });
+						$("#containerTemplate").html("");
+						$("#containerTemplate").append(select);
+						$("#ddl_templates").on("change", function (data) {
+							$("#ddl_templates").find("option").each(function () {
+								if ($(this).is(":selected") == true) {
+									var self = $(this);
+									for (i = 0; i < html.length; i++) {
+										if (html[i].template_name ==  self.text())	{
+											$("#issue_notes.wiki-edit").val(html[i].description);
+										}
+									}
+								}
+							});
+						});
+
+						$("#ddl_templates > option").on("click", function(data) {
+							var self = $(this);
+							for (i = 0; i < html.length; i++) {
+								if (html[i].template_name ==  self.text())	{
+									$("#issue_notes.wiki-edit").val(html[i].description);
+								}
+							}
+						});
+		  			});
+	    		}
+	  		});
+      	}).trigger("change");
+  	});
 
   function changeFunc() {
       $("#ddl_templates").find("option").each(function () {
